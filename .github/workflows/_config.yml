@@ -1,5 +1,6 @@
 lsi: false
 safe: true
+source: project-proposal-ml
 incremental: false
 highlighter: rouge
 theme: jekyll-theme-minimal
