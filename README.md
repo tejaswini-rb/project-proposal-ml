@@ -26,9 +26,9 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 
 
 # References
-[1] https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10134242
-[2] https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10131865
-[3] https://ijemr.vandanapublications.com/index.php/ijemr/article/view/842/761
-[4] https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2021.816226/full
-[5] https://www.ml.cmu.edu/research/dap-papers/S18/dap-cai-ermao.pdf
+- [1] https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10134242
+- [2] https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10131865
+- [3] https://ijemr.vandanapublications.com/index.php/ijemr/article/view/842/761
+- [4] https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2021.816226/full
+- [5] https://www.ml.cmu.edu/research/dap-papers/S18/dap-cai-ermao.pdf
 
