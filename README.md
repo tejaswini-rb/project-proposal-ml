@@ -39,7 +39,8 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 ![Team 39 Gantt Chart Screenshot](https://i.imgur.com/DhDmLrW.png "Gantt Chart")
 See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7cMV/edit?usp=sharing&ouid=101081220951400011101&rtpof=true&sd=true) for the full chart.
 
+
 ## Contribution Table
-<img width="744" alt="Screenshot 2024-02-23 at 11 23 03 PM" src="https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/2f24f9d6-bec3-4b23-86e0-a9dff7de427c">
+![Team 39 Contribution Table Screenshot](https://media.discordapp.net/attachments/1202741470885449849/1210806827932196874/Screenshot_2024-02-23_at_11.23.03_PM.png?ex=65ebe6bb&is=65d971bb&hm=89861c23bd426df83ede604b7a3ce20836afedef761eb7e401b01e08eb84b94e&=&format=webp&quality=lossless&width=1912&height=650)
 
 
