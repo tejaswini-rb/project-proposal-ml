@@ -27,7 +27,7 @@ We hope to achieve at least a 95% accuracy rate because previous work has achiev
 We expect our model will split fruit into 6 classes (each of the 3 kinds of fruits and whether they are rotten). Given an image of a fruit, the model will accurately predict which fruit it is and if it is rotten. We expect that the model may have lower accuracy differentiating between pomegranates and strawberries due to their similar colors. We may encounter overfitting problems since our dataset only has 250 images of each fruit. 
 
 
-# References
+## References
 - [1] Mohd Mohsin Ali, M. Raj, and Deepika Vatsa, “FruizNet Using an Efficient Convolutional Neural Network,” Mar. 2023.
 - [2] J N V D Tanuia Nerella, Vamsi Krishna Nippulapalli, Srivani Nancharla, Lakshmi Priya Vellanki, and Pallikonda Sarah Suhasini, “Performance Comparison of Deep Learning Techniques for Classification of Fruits as Fresh and Rotten,” Apr. 2023.
 - [3] D. V. Dhande and D. D. Patil, “A Deep Learning Based Model for Fruit Grading Using DenseNet,” International Journal of Engineering and Management Research, vol. 12, no. 5, pp. 6–10, Oct. 2022.
@@ -35,7 +35,7 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 - [5] E. Cai, A. Singh, and D. Marculescu, “Learning-based Power and Runtime Modeling for Convolutional Neural Networks,” Carnegie Mellon University, May 2018.
 
 
-# Gantt Chart
+## Gantt Chart
 ![Team 39 Gantt Chart Screenshot](https://i.imgur.com/DhDmLrW.png "Gantt Chart")
 See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7cMV/edit?usp=sharing&ouid=101081220951400011101&rtpof=true&sd=true) for the full chart.
 
