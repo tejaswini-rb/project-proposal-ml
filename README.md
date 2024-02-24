@@ -39,3 +39,12 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 ![Team 39 Gantt Chart Screenshot](https://i.imgur.com/DhDmLrW.png "Gantt Chart")
 See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7cMV/edit?usp=sharing&ouid=101081220951400011101&rtpof=true&sd=true) for the full chart.
 
+## Contribution Table
+| Name                      | Proposal Contributions                            |
+|---------------------------|---------------------------------------------------|
+| Tejaswini Ramkumar Babu  | Introduction, Problem Definition, References      |
+| Miles Gordon             | Methods, References, Recorded Video              |
+| Muhamad Immannulhakim    | Methods, References, Researched Feasibilty       |
+| Elizabeth Bruda          | Results & Discussion, References, Organized GANTT Chart           |
+| Varsha Jacob             | Results & Discussion, References, Formatted Slides          |
+
