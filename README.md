@@ -28,11 +28,12 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 
 
 # References
-- [1] https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10131865
-- [2] https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10134242
-- [3] https://ijemr.vandanapublications.com/index.php/ijemr/article/view/842/761
-- [4] https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2021.816226/full
-- [5] https://www.ml.cmu.edu/research/dap-papers/S18/dap-cai-ermao.pdf
+- [1] Mohd Mohsin Ali, M. Raj, and Deepika Vatsa, “FruizNet Using an Efficient Convolutional Neural Network,” Mar. 2023.
+- [2] J N V D Tanuia Nerella, Vamsi Krishna Nippulapalli, Srivani Nancharla, Lakshmi Priya Vellanki, and Pallikonda Sarah Suhasini, “Performance Comparison of Deep Learning Techniques for Classification of Fruits as Fresh and Rotten,” Apr. 2023.
+- [3] D. V. Dhande and D. D. Patil, “A Deep Learning Based Model for Fruit Grading Using DenseNet,” International Journal of Engineering and Management Research, vol. 12, no. 5, pp. 6–10, Oct. 2022.
+- [4] E. Sonwani, U. Bansal, R. Alroobaea, A. M. Baqasah, and M. Hedabou, “An Artificial  Intelligence Approach Toward Food Spoilage Detection and Analysis,” Frontiers in Public Health, vol. 9, Jan. 2022.
+- [5] E. Cai, A. Singh, and D. Marculescu, “Learning-based Power and Runtime Modeling for Convolutional Neural Networks,” Carnegie Mellon University, May 2018.
+
 
 # Gantt Chart
 ![Team 39 Gantt Chart Screenshot](https://i.imgur.com/DhDmLrW.png "Gantt Chart")
