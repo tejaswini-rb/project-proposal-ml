@@ -41,6 +41,6 @@ See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7
 
 
 ## Contribution Table
-![Team 39 Contribution Table Screenshot](https://media.discordapp.net/attachments/1202741470885449849/1210806827932196874/Screenshot_2024-02-23_at_11.23.03_PM.png?ex=65ebe6bb&is=65d971bb&hm=89861c23bd426df83ede604b7a3ce20836afedef761eb7e401b01e08eb84b94e&=&format=webp&quality=lossless&width=1912&height=650)
+![Team 39 Contribution Table Screenshot](https://i.imgur.com/3CzptPZ.png)
 
 
