@@ -1,4 +1,6 @@
 # Automated Classification of Fruit Spoilage: Detection and Analysis
+Elizabeth Bruda, Miles Gordon, Muhamad Imannulhakim, Varsha Jacob, Tejaswini Ramkumar Babu
+
 ## Introduction
 ### Literature Review
 The agricultural industry faces a challenge in effectively identifying rotten fruits. Manual classification of fruits is tedious for farmers and prone to human error and fatigue[1]. Unlike humans, machines do not tire after repetitive tasks, making them ideal for this problem. Spoiled fruit poses a risk to fresh produce if not quickly removed. Thus, early detection of rotten fruits is crucial. Computer vision and machine learning can be used to classify fresh and rotten fruits automatically, reducing human effort, cost, and time[2]. 
