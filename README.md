@@ -40,11 +40,6 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7cMV/edit?usp=sharing&ouid=101081220951400011101&rtpof=true&sd=true) for the full chart.
 
 ## Contribution Table
-| Name                      | Proposal Contributions                            |
-| :--------- |:---|
-| Tejaswini Ramkumar Babu  | Introduction, Problem Definition, References      |
-| Miles Gordon             | Methods, References, Recorded Video              |
-| Muhamad Immannulhakim    | Methods, References, Researched Feasibilty       |
-| Elizabeth Bruda          | Results & Discussion, References, Organized GANTT Chart           |
-| Varsha Jacob             | Results & Discussion, References, Formatted Slides          |
+<img width="744" alt="Screenshot 2024-02-23 at 11 23 03 PM" src="https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/2f24f9d6-bec3-4b23-86e0-a9dff7de427c">
+
 
