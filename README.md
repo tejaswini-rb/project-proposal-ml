@@ -41,7 +41,7 @@ See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7
 
 ## Contribution Table
 | Name                      | Proposal Contributions                            |
-|---------------------------|---------------------------------------------------|
+| :--------- |:---|
 | Tejaswini Ramkumar Babu  | Introduction, Problem Definition, References      |
 | Miles Gordon             | Methods, References, Recorded Video              |
 | Muhamad Immannulhakim    | Methods, References, Researched Feasibilty       |
