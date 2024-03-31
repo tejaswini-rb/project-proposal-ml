@@ -6,4 +6,4 @@ matplotlib
 seaborn
 keras
 tensorflow
-
+opencv-python
