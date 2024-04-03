@@ -166,6 +166,7 @@ See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7
 
 
 ## Contribution Table
-![Team 39 Contribution Table Screenshot](https://i.imgur.com/3CzptPZ.png)
+![Contribution Table](https://media.discordapp.net/attachments/1202741470885449849/1224922196019904673/Screenshot_2024-04-02_at_11.23.15_PM.png?ex=661f40b1&is=660ccbb1&hm=482454a3e635507dd782d23f53186fef635542166c0a7cad566d36700dbb59bf&=&format=webp&quality=lossless&width=1100&height=316)
+
 
 
