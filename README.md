@@ -19,12 +19,137 @@ We want to help reduce food waste by identifying rotten fruit ahead of time. Unl
 For preprocessing, we plan to use scaling to normalize image pixel values, data augmentation to generate a more diverse dataset by applying random transformations to existing images (both using tf.keras.preprocessing.image.ImageDataGenerator), and PCA (sklearn.decomposition.PCA) to reduce image dimensionality and lower training computational complexity. We can then extract SIFT descriptors (cv2.SIFT_create) from raw images and perform hierarchical clustering (sklearn.cluster.AgglomerativeClustering) to create a predictive model based on proximity to rotten/fresh clusters, and compare the results to those from training a CNN on our labeled data using categorial cross-entropy loss (tensorflow.keras.Model.fit), which aligns well with a probabilistic multi-class classification model.
 
 
-## (Potential) Results and Discussion
+### Data Preprocessing:
+The dataset was initially compressed in a ZIP file as fruit_data.zip, and then it was extracted to make the raw images accessible for preprocessing. Following extraction, a cleaning process was applied to the destination directory to remove any pre-existing data. To facilitate effective model training and evaluation, the dataset was then divided into three distinct sets: training, validation, and testing. The data was split using stratified sampling to maintain an even distribution of classes across each set, with ratios set to 85% for training, 12% for validation, and 15% for testing. 
+
+For Data Augmentation, we implement several methodologies, such as rotation, brightness adjustment, shear, zoom, and flipping. This process, applied exclusively to the training set, aimed to enhance the model's generalization capability by exposing it to a broader range of data variations. For the validation and test sets, a simple rescaling was applied to normalize pixel values to a [0, 1] range, ensuring model input consistency and improving computational efficiency.
+
+Those preprocessing steps were taken through the use of data generators so it can dynamically load and process images in batches during model training. This approach allowed for the efficient handling of large datasets that might not fit entirely into memory and facilitated real-time data augmentation. The generators were configured to serve the training, validation, and testing datasets with their respective preprocessing specifications, ensuring that each set was optimally prepared for its role in the model training and evaluation process.
+
+
+### Hierarchical Clustering
+To perform hierarchical clustering—which we felt was the most appropriate unsupervised learning algorithm for this task because of its clear association with classification and its ability to perceive hierarchical subclasses (such as rotten/fresh status within fruit types)—we extracted SIFT descriptors from our images. SIFT descriptors are scale-invariant and rotation-invariant image descriptors that encode “keypoints” (based on the presence of corners and edges) based on gradient. These are a classic means of representing images in machine learning problems—it is highly likely that the clear change in color between the background and the fruit led to the fruit composing keypoints, and we hoped that the descriptors would be differentiable both by fruit type and by whether the fruit shown is rotten or fresh. To make the complexity reasonable and filter out noise, we limited the number of keypoints considered to 1000, likely more than enough to encode entire pieces of fruit including their specific details (though across several trials with different numbers of keypoints considered, there was no significant change in accuracy, only in learning time). We then analyzed dendograms on a random sample of the data with every linkage type, and choose the linkage type that seemed to have the most clear division into 6 clusters, which in this case was Ward’s linkage (which adds greedily to clusters in a way that minimizes the squared distance from the mean for that cluster). We then trained AgglomerativeClustering using Ward's linkage and analyzed the results.
+
+
+### Decision Tree
+100% accuracy on train, 30% on test
+Methodology: We decided to train a Decision Tree classifier on the images to see if the features follow a tree-like structure. First, we preprocessed the data using the methods described above and split the data into training and testing datasets. Then, we constructed a combined data matrix that has all of the pixel values of the black and white training and testing images. We decided to run PCA on the data since using pixels as the features would cause us to have thousands of features (since the images are 300x300 pixels). Before running PCA, we found the value of the mean image (shown in the visualization section) and then subtracted it from the combined data. Then, we ran PCA on the data and selected the top 5 components. We chose the top 5 components since the PCA visualization below shows that there is an elbow at 4 principal components when running PCA on the data. We trained a Decision Tree Classifier on the training data and tested it on the training data.
+
+- [Visualizations](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/DecisionTree.ipynb)
+PCA Visualization
+Mean Image Visualization
+Decision Tree Image
+
+### CNN
+Since we needed to classify images into six classes, Convolutional Neural Networks (CNNs) was the model we chose since CNNs have multiple layers for feature detection and finding patterns in the image data. Furthermore, our image dataset is a relatively small size, as they are only 300 x 300 pixels each, so it is simple to pass the images themselves into a CNN without much need for complex preprocessing algorithms. A CNN is able to isolate the important features and find local patterns, which makes it more accurate and suited for this model than other methods.
+
+We chose to use the Adam optimizer for the CNN because it worked the best for our mode compared to the other options we tried (Adagrad, AdamW, and SGD). The best hyperparameters for our dataset with the Adam optimizer was 50 epochs and a learning rate of 0.006. Our quantitative metrics were accuracy, top-k = 2 (probability that the true label is among the model’s top 2 predictions), and average speed. Here are our visualizations below:
+
+[Optimizer = Adam, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN.ipynb)
+[Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
+[Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
+
+## Results and Discussion
 The quantitative metrics we will use are precision, accuracy, and speed. We’ll use precision since false positives (identifying rotten food as fresh) are dangerous to users. The accuracy rate will measure the model’s correctness. We’ll use time() to get a timestamp before and after calling model.predict() for the model speed. 
 
 We hope to achieve at least a 95% accuracy rate because previous work has achieved this using CNNs [1][3][4]. We hope to have a passing precision score of at least 0.7 and a prediction speed of at most 45 seconds [5] on Google Colab. 
 
-We expect our model will split fruit into 6 classes (each of the 3 kinds of fruits and whether they are rotten). Given an image of a fruit, the model will accurately predict which fruit it is and if it is rotten. We expect that the model may have lower accuracy differentiating between pomegranates and strawberries due to their similar colors. We may encounter overfitting problems since our dataset only has 250 images of each fruit. 
+We expect our model will split fruit into 6 classes (each of the 3 kinds of fruits and whether they are rotten). Given an image of a fruit, the model will accurately predict which fruit it is and if it is rotten. We expect that the model may have lower accuracy differentiating between pomegranates and strawberries due to their similar colors. We may encounter overfitting problems since our dataset only has 250 images of each fruit.
+
+### Hierarchical Clustering Results
+[Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
+
+To evaluate the performance of our hierarchical clustering algorithm, we printed the distribution of classes (consisting of a type of fruit and a rotten/fresh designation) in every cluster, and recorded the percentage of items from each class that were assigned to a cluster where a plurality of other members were in their class, as well as the extent of each plurality.
+
+
+#### Performance Overview:
+- **Cluster 0:**
+  - Label ['fresh' 'peach']: 10 occurrences
+  - Label ['fresh' 'pomegranate']: 47 occurrences
+  - Label ['fresh' 'strawberry']: 70 occurrences
+  - Label ['rotten' 'peach']: 107 occurrences
+  - Label ['rotten' 'pomegranate']: 79 occurrences
+  - Label ['rotten' 'strawberry']: 96 occurrences
+
+- **Cluster 1:**
+  - Label ['fresh' 'peach']: 193 occurrences
+  - Label ['fresh' 'pomegranate']: 199 occurrences
+  - Label ['fresh' 'strawberry']: 26 occurrences
+  - Label ['rotten' 'peach']: 119 occurrences
+  - Label ['rotten' 'pomegranate']: 50 occurrences
+  - Label ['rotten' 'strawberry']: 5 occurrences
+
+- **Cluster 2:**
+  - Label ['fresh' 'pomegranate']: 1 occurrence
+  - Label ['fresh' 'strawberry']: 68 occurrences
+  - Label ['rotten' 'peach']: 9 occurrences
+  - Label ['rotten' 'pomegranate']: 27 occurrences
+  - Label ['rotten' 'strawberry']: 63 occurrences
+
+- **Cluster 3:**
+  - Label ['fresh' 'peach']: 1 occurrence
+  - Label ['fresh' 'pomegranate']: 12 occurrences
+  - Label ['fresh' 'strawberry']: 60 occurrences
+  - Label ['rotten' 'peach']: 22 occurrences
+  - Label ['rotten' 'pomegranate']: 28 occurrences
+  - Label ['rotten' 'strawberry']: 56 occurrences
+
+- **Cluster 4:**
+  - Label ['fresh' 'peach']: 46 occurrences
+  - Label ['fresh' 'pomegranate']: 52 occurrences
+  - Label ['fresh' 'strawberry']: 15 occurrences
+  - Label ['rotten' 'peach']: 84 occurrences
+  - Label ['rotten' 'pomegranate']: 46 occurrences
+  - Label ['rotten' 'strawberry']: 21 occurrences
+
+- **Cluster 5:**
+  - Label ['fresh' 'strawberry']: 11 occurrences
+  - Label ['rotten' 'peach']: 2 occurrences
+  - Label ['rotten' 'pomegranate']: 20 occurrences
+  - Label ['rotten' 'strawberry']: 10 occurrences
+
+#### Metrics:
+
+- **Classes in Cluster with Plurality:**
+  - Fresh pomegranates in cluster with plurality: 199/311 = 63.99%
+  - Rotten pomegranates in cluster with plurality: 20/250 = 8%
+  - Fresh strawberries in cluster with plurality: 128/250 = 51.2%
+  - Rotten strawberries in cluster with plurality: 0/251 = 0%
+  - Fresh peaches in cluster with plurality: 0/250 = 0%
+  - Rotten peaches in cluster with plurality: 191/343 = 55.69%
+  - Total: 538/1655 = 32.51%
+
+- **Strength of Pluralities:**
+  - Cluster 0: 107/409 = 26.16%
+  - Cluster 1: 199/592 = 33.61%
+  - Cluster 2: 68/168 = 40.48%
+  - Cluster 3: 60/179 = 33.52%
+  - Cluster 4: 84/264 = 31.82%
+  - Cluster 5: 20/43 = 46.51%
+  - Average Percentage: 35.35% (median: 33.57%)
+
+
+The performance of hierarchical clustering on this task was extremely poor; almost 2/3rds of our fruits were assigned to clusters in which they did not have a plurality, indicating a very low predictive ability of our clustering. Furthermore, the average frequency of the class with a plurality in our clusters is 33.57%, suggesting that the fruits are relatively evenly distributed and there is not a significant correlation between classes of fruit and to which clusters they were assigned. While there are some patterns, like clusters 2 and 3 being dominated by strawberries of some sort, ultimately, hierarchical clustering was unable to produce a useful predictive model with our SIFT descriptors.
+One reason for this is that image data is very high-dimensional, leading to the curse of dimensionality. Specifically, as the number of dimensions increases, differences in distance become less meaningful because there are so many dimensions in which such differences can occur. However, to complete this task, we must have an encoding of not only fruits but also features such as mold within the fruits, making it impossible to resolve this problem by traditional dimensionality reduction because we lose our predictive abilities before we can reduce the problem enough for hierarchical clustering to be a useful task.
+
+
+Unsupervised learning is uncommon for image classification, and these results likely reveal why that may be the case. The next steps for our project are to pivot towards supervised learning methods like CNNs that are more suited for image classification tasks. We can also consider exploring other means of image encoding to see if we can achieve better performance with hierarchical clustering, but SIFT descriptors are a well-known standard that seemingly should have been able to properly encode this data, making it unlikely that we can significantly achieve performance by relying on unsupervised methods.
+
+
+### Decision Tree Results
+Our Decision Tree classifier had 100% accuracy on the training data and 32% accuracy on the testing data. The micro precision score was 0.308. It also only took 0.032 seconds to perform a prediction using clf.predict() on the testing data. 
+
+We believe that our Decision Tree classifier overfitted since the training accuracy is quite high (100%) but the testing accuracy is low (30%). Additionally, the image of the Decision Tree has around 18 levels which is a sign of overfitting since a decision tree is most optimal when it has fewer levels. A cause of this would be the fact that some of the pixels are being used as features meaning that even quite small changes in pixel features add another level. Additionally, the decision tree used PCA to select the top features, however, since our images were only 300x300 pixels this may have not been needed. On the other hand, our model makes predictions quite quickly since it only took 0.032 seconds to make a prediction and this is a benefit of using a Decision Tree classifier. 
+
+If we wanted to reduce overfitting in our Decision Tree classifier we could perform tree pruning. We could use a hyperparameter search to select the most optimal maximum depth hyperparameter during k-fold cross-validation. Pruning removes parts of the tree that don’t help as much with classifying data. This would reduce overfitting by reducing the complexity and size of the tree. After performing tree pruning, we would train the reduced tree again and verify that the testing accuracy has improved and is closer to the training accuracy. 
+
+
+### CNN Results
+Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We also found that Adam optimizer yielded the highest accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
+[Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml)
+Our next steps are to increase the stability of the CNN so that it can consistently and reliably achieve passing accuracy. We are planning to try adding more layers, explore more changes in the learning rate, and investigate the effects of changing the size of the filters.
+
+
 
 
 ## References
