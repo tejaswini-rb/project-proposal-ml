@@ -35,10 +35,17 @@ To perform hierarchical clustering—which we felt was the most appropriate unsu
 100% accuracy on train, 30% on test
 Methodology: We decided to train a Decision Tree classifier on the images to see if the features follow a tree-like structure. First, we preprocessed the data using the methods described above and split the data into training and testing datasets. Then, we constructed a combined data matrix that has all of the pixel values of the black and white training and testing images. We decided to run PCA on the data since using pixels as the features would cause us to have thousands of features (since the images are 300x300 pixels). Before running PCA, we found the value of the mean image (shown in the visualization section) and then subtracted it from the combined data. Then, we ran PCA on the data and selected the top 5 components. We chose the top 5 components since the PCA visualization below shows that there is an elbow at 4 principal components when running PCA on the data. We trained a Decision Tree Classifier on the training data and tested it on the training data.
 
-- [Visualizations](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/DecisionTree.ipynb)
+#### [Visualizations](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/DecisionTree.ipynb)
+
 PCA Visualization
+![pca](https://media.discordapp.net/attachments/1202741470885449849/1224923833824444566/Screenshot_2024-04-02_at_11.29.55_PM.png?ex=661f4237&is=660ccd37&hm=2dfd52715e8ca2183ca221dba1b9c7b3ff3cbe69d861941e1f0cf969d6d7967b&=&format=webp&quality=lossless&width=964&height=700)
+
 Mean Image Visualization
+
+![mean](https://cdn.discordapp.com/attachments/1202741470885449849/1224923307246354432/image.png?ex=661f41ba&is=660cccba&hm=6870a61816aebbb7b2365f67b56e1e99f91805cb1c6afbbb83792a166715514d&)
+
 Decision Tree Image
+![decision](https://media.discordapp.net/attachments/1202741470885449849/1224923346202792028/image.png?ex=661f41c3&is=660cccc3&hm=f9f96a90dedb4a46001638012757e24b141440ebb33853eea48e7c630e5efcd9&=&format=webp&quality=lossless&width=1032&height=700)
 
 ### CNN
 Since we needed to classify images into six classes, Convolutional Neural Networks (CNNs) was the model we chose since CNNs have multiple layers for feature detection and finding patterns in the image data. Furthermore, our image dataset is a relatively small size, as they are only 300 x 300 pixels each, so it is simple to pass the images themselves into a CNN without much need for complex preprocessing algorithms. A CNN is able to isolate the important features and find local patterns, which makes it more accurate and suited for this model than other methods.
@@ -46,8 +53,13 @@ Since we needed to classify images into six classes, Convolutional Neural Networ
 We chose to use the Adam optimizer for the CNN because it worked the best for our mode compared to the other options we tried (Adagrad, AdamW, and SGD). The best hyperparameters for our dataset with the Adam optimizer was 50 epochs and a learning rate of 0.006. Our quantitative metrics were accuracy, top-k = 2 (probability that the true label is among the model’s top 2 predictions), and average speed. Here are our visualizations below:
 
 [Optimizer = Adam, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN.ipynb)
+![10 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923127474159678/Screenshot_2024-04-02_at_10.20.54_PM.png?ex=661f418f&is=660ccc8f&hm=11276d191d6611793b1307fe9a65a213e39331dcceb4c39ecc5f7a9946ab924e&=&format=webp&quality=lossless&width=1042&height=1162)
+
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
+![30 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923127159718008/Screenshot_2024-04-02_at_10.21.03_PM.png?ex=661f418f&is=660ccc8f&hm=c7c898c7644430840828b79e7c0f67690540ed78372a8cd7d061134aea063abd&=&format=webp&quality=lossless&width=1076&height=1162)
+
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
+![50 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923126828105842/Screenshot_2024-04-02_at_10.21.14_PM.png?ex=661f418f&is=660ccc8f&hm=49c1759180348bcf5364736de22a70ffc8381b268a97a296f76bda1a9ede6a13&=&format=webp&quality=lossless&width=1076&height=1162)
 
 ## Results and Discussion
 The quantitative metrics we will use are precision, accuracy, and speed. We’ll use precision since false positives (identifying rotten food as fresh) are dangerous to users. The accuracy rate will measure the model’s correctness. We’ll use time() to get a timestamp before and after calling model.predict() for the model speed. 
@@ -58,6 +70,7 @@ We expect our model will split fruit into 6 classes (each of the 3 kinds of frui
 
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
+![ward](https://cdn.discordapp.com/attachments/1202741470885449849/1224924799097110538/Screenshot_2024-04-02_at_11.33.43_PM.png?ex=661f431e&is=660cce1e&hm=c95374a2bff6e25da81be604e922249e6c889c183d84902308bf0eb9360788f3&)
 
 To evaluate the performance of our hierarchical clustering algorithm, we printed the distribution of classes (consisting of a type of fruit and a rotten/fresh designation) in every cluster, and recorded the percentage of items from each class that were assigned to a cluster where a plurality of other members were in their class, as well as the extent of each plurality.
 
