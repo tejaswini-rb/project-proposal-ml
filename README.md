@@ -1,6 +1,8 @@
 # Automated Classification of Fruit Spoilage: Detection and Analysis
 Elizabeth Bruda, Miles Gordon, Muhamad Imannulhakim, Varsha Jacob, Tejaswini Ramkumar Babu
 
+# Midterm Report:
+
 ## Introduction
 ### Literature Review
 The agricultural industry faces a challenge in effectively identifying rotten fruits. Manual classification of fruits is tedious for farmers and prone to human error and fatigue [1]. Unlike humans, machines do not tire after repetitive tasks, making them ideal for this problem. Spoiled fruit poses a risk to fresh produce if not quickly removed. Thus, early detection of rotten fruits is crucial. Computer vision and machine learning can be used to classify fresh and rotten fruits automatically, reducing human effort, cost, and time [2]. 
@@ -32,7 +34,6 @@ To perform hierarchical clustering—which we felt was the most appropriate unsu
 
 
 ### Decision Tree
-100% accuracy on train, 30% on test
 Methodology: We decided to train a Decision Tree classifier on the images to see if the features follow a tree-like structure. First, we preprocessed the data using the methods described above and split the data into training and testing datasets. Then, we constructed a combined data matrix that has all of the pixel values of the black and white training and testing images. We decided to run PCA on the data since using pixels as the features would cause us to have thousands of features (since the images are 300x300 pixels). Before running PCA, we found the value of the mean image (shown in the visualization section) and then subtracted it from the combined data. Then, we ran PCA on the data and selected the top 5 components. We chose the top 5 components since the PCA visualization below shows that there is an elbow at 4 principal components when running PCA on the data. We trained a Decision Tree Classifier on the training data and tested it on the training data.
 
 #### [Visualizations](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/DecisionTree.ipynb)
@@ -61,12 +62,6 @@ We chose to use the Adam optimizer for the CNN because it worked the best for ou
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
 ![50 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923126828105842/Screenshot_2024-04-02_at_10.21.14_PM.png?ex=661f418f&is=660ccc8f&hm=49c1759180348bcf5364736de22a70ffc8381b268a97a296f76bda1a9ede6a13&=&format=webp&quality=lossless&width=1076&height=1162)
 
-## Results and Discussion
-The quantitative metrics we will use are precision, accuracy, and speed. We’ll use precision since false positives (identifying rotten food as fresh) are dangerous to users. The accuracy rate will measure the model’s correctness. We’ll use time() to get a timestamp before and after calling model.predict() for the model speed. 
-
-We hope to achieve at least a 95% accuracy rate because previous work has achieved this using CNNs [1][3][4]. We hope to have a passing precision score of at least 0.7 and a prediction speed of at most 45 seconds [5] on Google Colab. 
-
-We expect our model will split fruit into 6 classes (each of the 3 kinds of fruits and whether they are rotten). Given an image of a fruit, the model will accurately predict which fruit it is and if it is rotten. We expect that the model may have lower accuracy differentiating between pomegranates and strawberries due to their similar colors. We may encounter overfitting problems since our dataset only has 250 images of each fruit.
 
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
@@ -159,7 +154,7 @@ If we wanted to reduce overfitting in our Decision Tree classifier we could perf
 
 ### CNN Results
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We also found that Adam optimizer yielded the highest accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
-[Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml)
+[Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
 Our next steps are to increase the stability of the CNN so that it can consistently and reliably achieve passing accuracy. We are planning to try adding more layers, explore more changes in the learning rate, and investigate the effects of changing the size of the filters.
 
 
