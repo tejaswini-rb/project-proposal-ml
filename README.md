@@ -68,7 +68,7 @@ We chose to use the Adam optimizer for the CNN because it worked the best for ou
 <img src="images/epoch_50.png" width="500">
 
 
-Furthermore, we tested out other [CNN architectures](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_ResNet_MobileNetV2_EfficientNet.ipynb): Resnet50, EfficientNet, and MobileNetV2, and here are the visualizations:
+Furthermore, we tested out other [CNN architectures](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_ResNet_MobileNetV2_EfficientNet.ipynb): Resnet50, EfficientNet, and MobileNetV2, and we used accuracy, top-k = 2, and average speed metrics to measure the effectiveness of these models as well. Here are the visualizations:
 
 
 #### ResNet50
@@ -87,8 +87,7 @@ Furthermore, we tested out other [CNN architectures](https://github.com/tejaswin
 <img src="images/mobilenetv2acuracy.png" width="500">
 <img src="images/mobilenetv2loss.png" width="500">
 
-
-
+These visualizations display one of many trials for each model. The summary of every trial's accuracy, top k = 2, and speed can be seen in the results section below.
 
 ## Results
 ### Hierarchical Clustering Results
@@ -182,7 +181,16 @@ We believe that our Decision Tree classifier was initially overfitted since the 
 To reduce overfitting in our Decision Tree classifier we performed tree pruning. We used a hyperparameter search from 5 to 50 in increments of 5 as the max depth parameter for the decision tree using 10-fold cross validation.  Pruning removes parts of the tree that don’t help as much with classifying data. This reduced overfitting by reducing the complexity and size of the tree. We recorded the cross validation error for each max depth parameter value, which is displayed on one of the visualizations above. We found that the optimal maximum depth value was 5 levels. So, we trained a decision tree again with this selected parameter and got a testing accuracy of 72.55% which was a 40% increase from the previous classifier. This demonstrated how tree pruning was able to reduce overfitting in our model. In the future, we could further optimize our model by trying ensemble methods using Random Forests since these would introduce more variance. The random forest randomly selects features and datapoints to use so it would rely less on certain features. 
 
 ### CNN Results
-Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We found that using the ImageNet model led to a very high accuracy. Furthermore, it had a very high accuracy even from the first epoch. This may have been due to the fact that ImageNet is already pretrained on a database of many images, some of which were likely relevant to this task. We also found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
+Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. 
+
+**CNN**: For the vanilla CNN, we found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results. 
+
+**ResNet50**: bla
+
+**EfficientNet**: bla
+
+**MobileNetV2**: bla
+
 [Here are the results summarized.](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs)
 
 <img src="images/cnn_results.png" width="500">
