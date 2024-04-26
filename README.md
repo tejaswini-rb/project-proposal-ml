@@ -49,9 +49,6 @@ Mean Image Visualization
 Decision Tree Image
 ![decision tree](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/e11470e7-b3b3-4e10-b4eb-6e97559e6ad1)
 
-Pruning
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/3b04b67c-12db-4646-8e3a-04a2eee33c6d)
-
 
 ### CNN
 Since we needed to classify images into six classes, Convolutional Neural Networks (CNNs) was the model we chose since CNNs have multiple layers for feature detection and finding patterns in the image data. Furthermore, our image dataset is a relatively small size, as they are only 300 x 300 pixels each, so it is simple to pass the images themselves into a CNN without much need for complex preprocessing algorithms. A CNN is able to isolate the important features and find local patterns, which makes it more accurate and suited for this model than other methods.
