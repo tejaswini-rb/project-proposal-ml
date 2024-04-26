@@ -183,14 +183,13 @@ To reduce overfitting in our Decision Tree classifier we performed tree pruning.
 ### CNN Results
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. 
 
-**CNN**: For the vanilla CNN, we found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results. 
+**CNN**: For the vanilla CNN, we found that the Adam optimizer yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results. 
 
-**ResNet50**: bla
+**ResNet50**: ResNet50 gave mediocre results. The accuracies and the top k accuracies at each epoch showed the greatest variance with the hyperparameter changes (from increasing the numbers of epochs to 20 and changing the learning rate to be extremely small). Doubling the number of epochs increased the accuracy from 30% to 50%, and the top k = 2 accuracy jumped from 59% to 91%. The model took a relatively short time to run at around 24 seconds per epoch.
 
-**EfficientNet**: bla
+**EfficientNet**: We found that the EfficientNet model yielded the worst results with the accuracy consistently being around 20% regardless of the extent in which the hyperparameters, such as learning rate, were altered. Most of the top k accuracies at each epoch were around 35%, meaning the correct prediction was not often not in one of the top two predictions made by this model. It performed the worst out of all the other models in our dataset, but, the model took the shortest time to run at an average of 23 seconds per epoch.
 
-**MobileNetV2**: bla
-
+**MobileNetV2**: We found that the MobileNetV2 model yielded the best results at 97.9% accuracy. Most of the top k accuracies at each epoch were above 99%, showing that the correct class was consistently within the model’s top two predictions. This model performed the best out of all the other models in our dataset! However, the model took the longest to run at an average of 35 seconds per epoch.
 [Here are the results summarized.](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs)
 
 <img src="images/cnn_results.png" width="500">
