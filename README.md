@@ -196,7 +196,11 @@ Through multiple trials, we found that accuracy generally increased as loss decr
 
 
 ### Comparison of Algorithms/Models
+Out of our supervised models, we found that CNNs were the most accurate, and out of the CNN models we implemented, MobileNetV2 had the best results, with an accuracy of 97.9%. Comparatively, the other CNN models had accuracies of 81% for the vanilla CNN, 50% for ResNet50, and 20% for EfficientNet. The DecisionTree model, once tuned, also had a relatively high accuracy of 72.55%, although its testing accuracy was quite low before tuning the model. Comparatively, our unsupervised model, hierarchical clustering, only had an accuracy of around 30%, which is approximately the same as if the model had randomly guessed between the three types of fruit. 
 
+In terms of speed, the decision tree was the fastest model, though it was prone to overfitting, which decreased the accuracy. The EfficientNet CNN model was the next fastest, but its accuracy was quite low. While MobileNetV2 was the slowest model, it had the highest accuracy. In the future, further tuning on the DecisionTree model could lead to it having higher accuracy while retaining its speed. 
+
+Overall, we found that the MobileNetV2 model was the best suited for image classification for our dataset, though it took the longest out of the models to run. The Vanilla CNN and DecisionTree models could also potentially perform well with more tuning and feature engineering, which would reduce overfitting and lead to increased testing accuracy. 
 
 ### Next Steps
 
