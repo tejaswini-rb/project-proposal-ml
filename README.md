@@ -68,6 +68,26 @@ We chose to use the Adam optimizer for the CNN because it worked the best for ou
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
 ![50 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/c55d1b7c-4a60-46f0-bcb8-82acdafdee8f)
 
+
+Furthermore, we tested out different CNN architectures: Resnet50, EfficientNet, and MobileNetV2
+
+
+#### ResNet50
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/6dd1b7a9-ec8c-45ab-9b35-8c536e8be6cc)
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/909fb716-d9fd-49b2-869a-c523d7e50d0d)
+
+
+#### EfficientNet
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/636f485e-02be-4dcc-9cf3-d78c9cda9594)
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/74d14fcf-e19a-412d-967a-bd641e959cc7)
+
+#### MobileNetV2
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/35a7a0c3-1531-4cd3-bb5d-bab838d7ea67)
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/103eb885-00c7-4878-9106-7015af1a375c)
+
+
+
+
 ## Results
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
@@ -159,12 +179,9 @@ We believe that our Decision Tree classifier was initially overfitted since the 
 To reduce overfitting in our Decision Tree classifier we performed tree pruning. We used a hyperparameter search from 5 to 50 in increments of 5 as the max depth parameter for the decision tree using 10-fold cross validation.  Pruning removes parts of the tree that don’t help as much with classifying data. This reduced overfitting by reducing the complexity and size of the tree. We recorded the cross validation error for each max depth parameter value, which is displayed on one of the visualizations above. We found that the optimal maximum depth value was 5 levels. So, we trained a decision tree again with this selected parameter and got a testing accuracy of 72.55% which was a 40% increase from the previous classifier. This demonstrated how tree pruning was able to reduce overfitting in our model. In the future, we could further optimize our model by trying ensemble methods using Random Forests since these would introduce more variance. The random forest randomly selects features and datapoints to use so it would rely less on certain features. 
 
 ### CNN Results
-Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We also found that Adam optimizer yielded the highest accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
-[Here are the top results summarized](add image here)
-
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We found that using the ImageNet model led to a very high accuracy. Furthermore, it had a very high accuracy even from the first epoch. This may have been due to the fact that ImageNet is already pretrained on a database of many images, some of which were likely relevant to this task. We also found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
 [Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
-
+<img width="634" alt="Screenshot 2024-04-25 at 9 19 01 PM" src="https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/4a17e1f6-744b-4c79-8e6f-61fefce1a201">
 
 
 
