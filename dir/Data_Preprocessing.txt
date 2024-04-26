@@ -1,0 +1,1 @@
+Data_Preprocessing.ipynb: Juypter notebook for splitting the data into train, test, and validation sets as well was performing image preprocessing such as rotation, brightness adjustment, shear, zoom, and flipping
