@@ -1,7 +1,7 @@
 # Automated Classification of Fruit Spoilage: Detection and Analysis
 Elizabeth Bruda, Miles Gordon, Muhamad Imannulhakim, Varsha Jacob, Tejaswini Ramkumar Babu
 
-# FINAL REPORT
+# Final Report
 
 ## Introduction
 ### Literature Review
