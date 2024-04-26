@@ -1,0 +1,1 @@
+DecisionTree.ipynb: Juypter notebook containing the code for training a decision tree classifier on the images in the training dataset and performing predictions on the images in the test dataset. These images have already been preprocessed.
