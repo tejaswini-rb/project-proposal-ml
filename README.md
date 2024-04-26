@@ -58,18 +58,18 @@ Since we needed to classify images into six classes, Convolutional Neural Networ
 
 We chose to use the Adam optimizer for the CNN because it worked the best for our mode compared to the other options we tried (Adagrad, AdamW, and SGD). The best hyperparameters for our dataset with the Adam optimizer was 50 epochs and a learning rate of 0.006. Our quantitative metrics were accuracy, top-k = 2 (probability that the true label is among the model’s top 2 predictions), and average speed. Here are our visualizations below:
 
-[Optimizer = Adam, Epochs = 10](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN.ipynb)
+[Optimizer = Adam, Epochs = 10](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_10_Epochs.ipynb)
 ![10 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/149a29e2-eb66-41ab-bd29-94a0f83a5794)
 
-[Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
+[Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_30_Epochs.ipynb)
 ![30 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/2d222a2e-4efe-466e-b55c-2c736b8aef47)
 
 
-[Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
+[Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_50_Epochs.ipynb)
 ![50 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/c55d1b7c-4a60-46f0-bcb8-82acdafdee8f)
 
 
-Furthermore, we tested out different CNN architectures: Resnet50, EfficientNet, and MobileNetV2
+Furthermore, we tested out other [CNN architectures](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_ResNet_MobileNetV2_EfficientNet.ipynb): Resnet50, EfficientNet, and MobileNetV2, and here are the visualizations:
 
 
 #### ResNet50
