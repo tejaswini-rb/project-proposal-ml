@@ -1,4 +1,7 @@
-# Description of files:
+# Description:
+
+This repository explores data preprocessing, hierachical clustering, decision trees, and CNN architectures. for classifying fresh and rotten fruit. The fruits in our dataset are peaches, strawberries, and pomegranates.
+
 
 - `CNNs`: This folder contains the vanilla CNN model, EfficientNet, ResNet50, and MobileNetV2 models.  Image classification using TensorFlow and Keras; we did data preparation with train-validation-test split, exploratory data visualization, data augmentation, CNN model and training, and performance evaluation with accuracy and loss metrics.
     - `CNN_10_Epochs.ipynb`: This file has the results for a 10 epoch run and a default learning rate (Adam optimizer).
