@@ -39,15 +39,15 @@ We decided to train a Decision Tree classifier on the images to see if the featu
 
 PCA Visualization
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/pca.png" width="500">
+<img src="images/pca.png" width="500">
 
 Mean Image Visualization
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/mean.png" width="500">
+<img src="images/mean.png" width="500">
 
 Decision Tree Image
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/decision_tree.png" width="600">
+<img src="images/decision_tree.png" width="600">
 
 
 ### CNN
@@ -57,15 +57,15 @@ We chose to use the Adam optimizer for the CNN because it worked the best for ou
 
 [Optimizer = Adam, Epochs = 10](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_10_Epochs.ipynb)
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/epoch_10.png" width="500">
+<img src="images/epoch_10.png" width="500">
 
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_30_Epochs.ipynb)
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/epoch_30.png" width="500">
+<img src="images/epoch_30.png" width="500">
 
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_50_Epochs.ipynb)
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/epoch_50.png" width="500">
+<img src="images/epoch_50.png" width="500">
 
 
 Furthermore, we tested out other [CNN architectures](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_ResNet_MobileNetV2_EfficientNet.ipynb): Resnet50, EfficientNet, and MobileNetV2, and here are the visualizations:
@@ -73,19 +73,19 @@ Furthermore, we tested out other [CNN architectures](https://github.com/tejaswin
 
 #### ResNet50
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/resnet50accuracy.png" width="500">
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/resnet50loss.png" width="500">
+<img src="images/resnet50accuracy.png" width="500">
+<img src="images/resnet50loss.png" width="500">
 
 
 #### EfficientNet
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/efficientnetaccuracy.png" width="500">
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/efficientnetloss.png" width="500">
+<img src="images/efficientnetaccuracy.png" width="500">
+<img src="images/efficientnetloss.png" width="500">
 
 #### MobileNetV2
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/mobilenetv2acuracy.png" width="500">
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/mobilenetv2loss.png" width="500">
+<img src="images/mobilenetv2acuracy.png" width="500">
+<img src="images/mobilenetv2loss.png" width="500">
 
 
 
@@ -94,7 +94,7 @@ Furthermore, we tested out other [CNN architectures](https://github.com/tejaswin
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/hierarchical.png" width="600">
+<img src="images/hierarchical.png" width="600">
 
 
 To evaluate the performance of our hierarchical clustering algorithm, we printed the distribution of classes (consisting of a type of fruit and a rotten/fresh designation) in every cluster, and recorded the percentage of items from each class that were assigned to a cluster where a plurality of other members were in their class, as well as the extent of each plurality.
@@ -185,7 +185,7 @@ To reduce overfitting in our Decision Tree classifier we performed tree pruning.
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We found that using the ImageNet model led to a very high accuracy. Furthermore, it had a very high accuracy even from the first epoch. This may have been due to the fact that ImageNet is already pretrained on a database of many images, some of which were likely relevant to this task. We also found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
 [Here are the results summarized.](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs)
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/cnn_results.png" width="500">
+<img src="images/cnn_results.png" width="500">
 
 
 
