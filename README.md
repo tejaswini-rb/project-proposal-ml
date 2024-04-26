@@ -68,7 +68,7 @@ We chose to use the Adam optimizer for the CNN because it worked the best for ou
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
 ![50 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/c55d1b7c-4a60-46f0-bcb8-82acdafdee8f)
 
-
+## Results
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
 ![hierarchical clustering](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/1868c52b-259d-4d83-9dac-bb797b8872a9)
