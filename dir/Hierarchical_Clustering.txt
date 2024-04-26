@@ -1,0 +1,1 @@
+Hierarchical_Clustering.ipynb: Juypter notebook extracting features using the SIFT method and does hierarchical clustering to categorize these images into groups based on visual similarity.
