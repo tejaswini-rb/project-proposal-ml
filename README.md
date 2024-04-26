@@ -38,16 +38,16 @@ We decided to train a Decision Tree classifier on the images to see if the featu
 #### [Visualizations](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/DecisionTree.ipynb)
 
 PCA Visualization
-![pca](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/7b2a8f69-1a56-4bda-8e69-a93432d21187)
 
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/pca.png" width="500">
 
 Mean Image Visualization
 
-![mean](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/4914bfba-1690-4ec0-9efb-c99fe5a34405)
-
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/mean.png" width="500">
 
 Decision Tree Image
-![decision tree](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/e11470e7-b3b3-4e10-b4eb-6e97559e6ad1)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/decision_tree.png" width="600">
 
 
 ### CNN
@@ -56,31 +56,36 @@ Since we needed to classify images into six classes, Convolutional Neural Networ
 We chose to use the Adam optimizer for the CNN because it worked the best for our mode compared to the other options we tried (Adagrad, AdamW, and SGD). The best hyperparameters for our dataset with the Adam optimizer was 50 epochs and a learning rate of 0.006. Our quantitative metrics were accuracy, top-k = 2 (probability that the true label is among the model’s top 2 predictions), and average speed. Here are our visualizations below:
 
 [Optimizer = Adam, Epochs = 10](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_10_Epochs.ipynb)
-![10 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/149a29e2-eb66-41ab-bd29-94a0f83a5794)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/epoch_10.png" width="500">
 
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_30_Epochs.ipynb)
-![30 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/2d222a2e-4efe-466e-b55c-2c736b8aef47)
 
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/epoch_30.png" width="500">
 
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_50_Epochs.ipynb)
-![50 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/c55d1b7c-4a60-46f0-bcb8-82acdafdee8f)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/epoch_50.png" width="500">
 
 
 Furthermore, we tested out other [CNN architectures](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs/CNN_ResNet_MobileNetV2_EfficientNet.ipynb): Resnet50, EfficientNet, and MobileNetV2, and here are the visualizations:
 
 
 #### ResNet50
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/6dd1b7a9-ec8c-45ab-9b35-8c536e8be6cc)
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/909fb716-d9fd-49b2-869a-c523d7e50d0d)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/resnet50accuracy.png" width="500">
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/resnet50loss.png" width="500">
 
 
 #### EfficientNet
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/636f485e-02be-4dcc-9cf3-d78c9cda9594)
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/74d14fcf-e19a-412d-967a-bd641e959cc7)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/efficientnetaccuracy.png" width="500">
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/efficientnetloss.png" width="500">
 
 #### MobileNetV2
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/35a7a0c3-1531-4cd3-bb5d-bab838d7ea67)
-![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/103eb885-00c7-4878-9106-7015af1a375c)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/mobilenetv2acuracy.png" width="500">
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/mobilenetv2loss.png" width="500">
 
 
 
@@ -88,7 +93,8 @@ Furthermore, we tested out other [CNN architectures](https://github.com/tejaswin
 ## Results
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
-![hierarchical clustering](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/1868c52b-259d-4d83-9dac-bb797b8872a9)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/hierarchical.png" width="600">
 
 
 To evaluate the performance of our hierarchical clustering algorithm, we printed the distribution of classes (consisting of a type of fruit and a rotten/fresh designation) in every cluster, and recorded the percentage of items from each class that were assigned to a cluster where a plurality of other members were in their class, as well as the extent of each plurality.
@@ -177,8 +183,9 @@ To reduce overfitting in our Decision Tree classifier we performed tree pruning.
 
 ### CNN Results
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We found that using the ImageNet model led to a very high accuracy. Furthermore, it had a very high accuracy even from the first epoch. This may have been due to the fact that ImageNet is already pretrained on a database of many images, some of which were likely relevant to this task. We also found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
-[Here are the top results summarized.](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs)
-<img width="659" alt="Screenshot 2024-04-25 at 10 23 59 PM" src="https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/a166fb59-ff05-40dd-9e22-9a4ee686ad17">
+[Here are the results summarized.](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/cnn_results.png" width="500">
 
 
 
@@ -200,5 +207,7 @@ See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7
 
 
 ## Contribution Table
-![contribution table](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/3d37065b-c72c-4f4d-8bc2-97acfedb8b1a)
+
+<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/contribution_table.png" width="800">
+
 
