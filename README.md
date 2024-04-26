@@ -196,6 +196,7 @@ Through multiple trials, we found that accuracy generally increased as loss decr
 <img src="images/cnn_results.png" width="500">
 
 
+### Comparison of Algorithms/Models
 
 
 
