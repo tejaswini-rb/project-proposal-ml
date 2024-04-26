@@ -1,0 +1,1 @@
+fruit_dataset: Directory with our fruit dataset of fresh and rotten, peaches, strawberries, and pomegranates.
