@@ -1,7 +1,7 @@
 # Automated Classification of Fruit Spoilage: Detection and Analysis
 Elizabeth Bruda, Miles Gordon, Muhamad Imannulhakim, Varsha Jacob, Tejaswini Ramkumar Babu
 
-# Midterm Report:
+# FINAL REPORT
 
 ## Introduction
 ### Literature Review
@@ -21,7 +21,7 @@ We want to help reduce food waste by identifying rotten fruit ahead of time. Unl
 For preprocessing, we used scaling to normalize image pixel values, data augmentation to generate a more diverse dataset by applying random transformations to existing images (both using tf.keras.preprocessing.image.ImageDataGenerator), and PCA (sklearn.decomposition.PCA) to reduce image dimensionality and lower training computational complexity. We performed hierarchical clustering (sklearn.cluster.AgglomerativeClustering) to create a predictive model based on proximity to rotten/fresh clusters, and compare the results to those from training a CNN on our labeled data using categorial cross-entropy loss (tensorflow.keras.Model.fit).
 
 ### Data Preprocessing
-The dataset was initially compressed in a ZIP file as fruit_data.zip, and then it was extracted to make the raw images accessible for preprocessing. Following extraction, a cleaning process was applied to the destination directory to remove any pre-existing data. To facilitate effective model training and evaluation, the dataset was then divided into three distinct sets: training, validation, and testing. The data was split using stratified sampling to maintain an even distribution of classes across each set, with ratios set to 85% for training, 12% for validation, and 15% for testing. 
+The dataset was initially compressed in a ZIP file as fruit_data.zip, and then it was extracted to make the raw images accessible for preprocessing. Following extraction, a cleaning process was applied to the destination directory to remove any pre-existing data. To facilitate effective model training and evaluation, the dataset was then divided into three distinct sets: training, validation, and testing. The data was split using stratified sampling to maintain an even distribution of classes across each set, with ratios set to 65% for training, 20% for validation, and 15% for testing. 
 
 For Data Augmentation, we implement several methodologies, such as rotation, brightness adjustment, shear, zoom, and flipping. This process, applied exclusively to the training set, aimed to enhance the model's generalization capability by exposing it to a broader range of data variations. For the validation and test sets, a simple rescaling was applied to normalize pixel values to a [0, 1] range, ensuring model input consistency and improving computational efficiency.
 
@@ -38,33 +38,41 @@ We decided to train a Decision Tree classifier on the images to see if the featu
 #### [Visualizations](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/DecisionTree.ipynb)
 
 PCA Visualization
-![pca](https://media.discordapp.net/attachments/1202741470885449849/1224923833824444566/Screenshot_2024-04-02_at_11.29.55_PM.png?ex=661f4237&is=660ccd37&hm=2dfd52715e8ca2183ca221dba1b9c7b3ff3cbe69d861941e1f0cf969d6d7967b&=&format=webp&quality=lossless&width=964&height=700)
+![pca](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/7b2a8f69-1a56-4bda-8e69-a93432d21187)
+
 
 Mean Image Visualization
 
-![mean](https://cdn.discordapp.com/attachments/1202741470885449849/1224923307246354432/image.png?ex=661f41ba&is=660cccba&hm=6870a61816aebbb7b2365f67b56e1e99f91805cb1c6afbbb83792a166715514d&)
+![mean](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/4914bfba-1690-4ec0-9efb-c99fe5a34405)
+
 
 Decision Tree Image
-![decision](https://media.discordapp.net/attachments/1202741470885449849/1224923346202792028/image.png?ex=661f41c3&is=660cccc3&hm=f9f96a90dedb4a46001638012757e24b141440ebb33853eea48e7c630e5efcd9&=&format=webp&quality=lossless&width=1032&height=700)
+![decision tree](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/e11470e7-b3b3-4e10-b4eb-6e97559e6ad1)
+
+Pruning
+![image](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/3b04b67c-12db-4646-8e3a-04a2eee33c6d)
+
 
 ### CNN
 Since we needed to classify images into six classes, Convolutional Neural Networks (CNNs) was the model we chose since CNNs have multiple layers for feature detection and finding patterns in the image data. Furthermore, our image dataset is a relatively small size, as they are only 300 x 300 pixels each, so it is simple to pass the images themselves into a CNN without much need for complex preprocessing algorithms. A CNN is able to isolate the important features and find local patterns, which makes it more accurate and suited for this model than other methods.
 
 We chose to use the Adam optimizer for the CNN because it worked the best for our mode compared to the other options we tried (Adagrad, AdamW, and SGD). The best hyperparameters for our dataset with the Adam optimizer was 50 epochs and a learning rate of 0.006. Our quantitative metrics were accuracy, top-k = 2 (probability that the true label is among the model’s top 2 predictions), and average speed. Here are our visualizations below:
 
-[Optimizer = Adam, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN.ipynb)
-![10 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923127474159678/Screenshot_2024-04-02_at_10.20.54_PM.png?ex=661f418f&is=660ccc8f&hm=11276d191d6611793b1307fe9a65a213e39331dcceb4c39ecc5f7a9946ab924e&=&format=webp&quality=lossless&width=1042&height=1162)
+[Optimizer = Adam, Epochs = 10](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN.ipynb)
+![10 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/149a29e2-eb66-41ab-bd29-94a0f83a5794)
 
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 30](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
-![30 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923127159718008/Screenshot_2024-04-02_at_10.21.03_PM.png?ex=661f418f&is=660ccc8f&hm=c7c898c7644430840828b79e7c0f67690540ed78372a8cd7d061134aea063abd&=&format=webp&quality=lossless&width=1076&height=1162)
+![30 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/2d222a2e-4efe-466e-b55c-2c736b8aef47)
+
 
 [Optimizer = Adam, Learning Rate = 0.006, Epochs = 50](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_50_Epochs.ipynb)
-![50 epoch](https://media.discordapp.net/attachments/1202741470885449849/1224923126828105842/Screenshot_2024-04-02_at_10.21.14_PM.png?ex=661f418f&is=660ccc8f&hm=49c1759180348bcf5364736de22a70ffc8381b268a97a296f76bda1a9ede6a13&=&format=webp&quality=lossless&width=1076&height=1162)
+![50 epoch](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/c55d1b7c-4a60-46f0-bcb8-82acdafdee8f)
 
 
 ### Hierarchical Clustering Results
 [Visualization](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/Hierarchical_Clustering.ipynb)
-![ward](https://cdn.discordapp.com/attachments/1202741470885449849/1224924799097110538/Screenshot_2024-04-02_at_11.33.43_PM.png?ex=661f431e&is=660cce1e&hm=c95374a2bff6e25da81be604e922249e6c889c183d84902308bf0eb9360788f3&)
+![hierarchical clustering](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/1868c52b-259d-4d83-9dac-bb797b8872a9)
+
 
 To evaluate the performance of our hierarchical clustering algorithm, we printed the distribution of classes (consisting of a type of fruit and a rotten/fresh designation) in every cluster, and recorded the percentage of items from each class that were assigned to a cluster where a plurality of other members were in their class, as well as the extent of each plurality.
 
@@ -144,17 +152,21 @@ Unsupervised learning is uncommon for image classification, and these results li
 
 
 ### Decision Tree Results
-Our Decision Tree classifier had 100% accuracy on the training data and 32% accuracy on the testing data. The micro precision score was 0.308. It also only took 0.032 seconds to perform a prediction using clf.predict() on the testing data. 
+Initially, our Decision Tree classifier had 100% accuracy on the training data and 32% accuracy on the testing data. The micro precision score was 0.308. It also only took 0.032 seconds to perform a prediction using clf.predict() on the testing data. However, after tuning the classifier, our testing accuracy increased to 72.55%. 
 
-We believe that our Decision Tree classifier overfitted since the training accuracy is quite high (100%) but the testing accuracy is low (30%). Additionally, the image of the Decision Tree has around 18 levels which is a sign of overfitting since a decision tree is most optimal when it has fewer levels. A cause of this would be the fact that some of the pixels are being used as features meaning that even quite small changes in pixel features add another level. Additionally, the decision tree used PCA to select the top features, however, since our images were only 300x300 pixels this may have not been needed. On the other hand, our model makes predictions quite quickly since it only took 0.032 seconds to make a prediction and this is a benefit of using a Decision Tree classifier. 
+We believe that our Decision Tree classifier was initially overfitted since the training accuracy is quite high (100%) but the testing accuracy is low (30%). Additionally, the image of the Decision Tree has around 18 levels which is a sign of overfitting since a decision tree is most optimal when it has fewer levels. A cause of this would be the fact that some of the pixels are being used as features meaning that even quite small changes in pixel features add another level. Additionally, the decision tree used PCA to select the top features, however, since our images were only 300x300 pixels this may have not been needed. On the other hand, our model makes predictions quite quickly since it only took 0.032 seconds to make a prediction and this is a benefit of using a Decision Tree classifier. 
 
-If we wanted to reduce overfitting in our Decision Tree classifier we could perform tree pruning. We could use a hyperparameter search to select the most optimal maximum depth hyperparameter during k-fold cross-validation. Pruning removes parts of the tree that don’t help as much with classifying data. This would reduce overfitting by reducing the complexity and size of the tree. After performing tree pruning, we would train the reduced tree again and verify that the testing accuracy has improved and is closer to the training accuracy. 
-
+To reduce overfitting in our Decision Tree classifier we performed tree pruning. We used a hyperparameter search from 5 to 50 in increments of 5 as the max depth parameter for the decision tree using 10-fold cross validation.  Pruning removes parts of the tree that don’t help as much with classifying data. This reduced overfitting by reducing the complexity and size of the tree. We recorded the cross validation error for each max depth parameter value, which is displayed on one of the visualizations above. We found that the optimal maximum depth value was 5 levels. So, we trained a decision tree again with this selected parameter and got a testing accuracy of 72.55% which was a 40% increase from the previous classifier. This demonstrated how tree pruning was able to reduce overfitting in our model. In the future, we could further optimize our model by trying ensemble methods using Random Forests since these would introduce more variance. The random forest randomly selects features and datapoints to use so it would rely less on certain features. 
 
 ### CNN Results
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We also found that Adam optimizer yielded the highest accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
+[Here are the top results summarized](add image here)
+
+Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We found that using the ImageNet model led to a very high accuracy. Furthermore, it had a very high accuracy even from the first epoch. This may have been due to the fact that ImageNet is already pretrained on a database of many images, some of which were likely relevant to this task. We also found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
 [Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
-Our next steps are to increase the stability of the CNN so that it can consistently and reliably achieve passing accuracy. We are planning to try adding more layers, explore more changes in the learning rate, and investigate the effects of changing the size of the filters.
+
+
+
 
 
 
@@ -173,7 +185,5 @@ See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7
 
 
 ## Contribution Table
-![Contribution Table](https://media.discordapp.net/attachments/1202741470885449849/1224922196019904673/Screenshot_2024-04-02_at_11.23.15_PM.png?ex=661f40b1&is=660ccbb1&hm=482454a3e635507dd782d23f53186fef635542166c0a7cad566d36700dbb59bf&=&format=webp&quality=lossless&width=1100&height=316)
-
-
+![contribution table](https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/3d37065b-c72c-4f4d-8bc2-97acfedb8b1a)
 
