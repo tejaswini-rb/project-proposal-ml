@@ -180,8 +180,9 @@ To reduce overfitting in our Decision Tree classifier we performed tree pruning.
 
 ### CNN Results
 Through multiple trials, we found that accuracy generally increased as loss decreased with each epoch, although there were fluctuations. We found that using the ImageNet model led to a very high accuracy. Furthermore, it had a very high accuracy even from the first epoch. This may have been due to the fact that ImageNet is already pretrained on a database of many images, some of which were likely relevant to this task. We also found that the Adam optimizer also yielded a very high accuracy for 10 epochs, and that although our highest accuracy for CNN was 81%, most of the top k accuracies at each epoch were above 90%, showing that the correct class was within the model’s top two predictions. However, there were variations in performance runs with the results plateauing after about 25 epochs as shown in the visualizations, so this tells us there is room for better refinement of our results.
-[Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNN_Improved.ipynb)
-<img width="634" alt="Screenshot 2024-04-25 at 9 19 01 PM" src="https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/4a17e1f6-744b-4c79-8e6f-61fefce1a201">
+[Here are the top results summarized](https://github.com/tejaswini-rb/project-proposal-ml/blob/main/CNNs)
+<img width="659" alt="Screenshot 2024-04-25 at 10 23 59 PM" src="https://github.com/tejaswini-rb/project-proposal-ml/assets/114116509/a166fb59-ff05-40dd-9e22-9a4ee686ad17">
+
 
 
 
