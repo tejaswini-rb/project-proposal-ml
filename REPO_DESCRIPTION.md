@@ -14,6 +14,8 @@ This repository explores data preprocessing, hierachical clustering, decision tr
 
 - `Hierarchical_Clustering.ipynb`: Juypter notebook extracting features using the SIFT method and does hierarchical clustering to categorize these images into groups based on visual similarity.
 
+- `Hierarchical_Clustering_Color_Histograms.ipynb` Juypter notebook with histograms for hierarchical clustering.
+
 - `Data_Preprocessing.ipynb`: Juypter notebook for splitting the data into train, test, and validation sets as well was performing image preprocessing such as rotation, brightness adjustment, shear, zoom, and flipping
 
 - `fruit_dataset`: Directory with our fruit dataset of fresh and rotten, peaches, strawberries, and pomegranates.
