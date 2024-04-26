@@ -208,6 +208,6 @@ See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7
 
 ## Contribution Table
 
-<img src="https://github.com/tejaswini-rb/project-proposal-ml/blob/main/images/contribution_table.png" width="800">
+<img src="images/contribution_table.png" width="800">
 
 
