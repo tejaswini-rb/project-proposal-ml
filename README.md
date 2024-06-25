@@ -219,8 +219,4 @@ Our next steps would be to add more images to the dataset to include more fruit 
 See [here](https://docs.google.com/spreadsheets/d/1m-W8_CN5DLlSRQmso1E5ofZwSR4k7cMV/edit?usp=sharing&ouid=101081220951400011101&rtpof=true&sd=true) for the full chart.
 
 
-## Contribution Table
-
-<img src="images/contribution_table.png" width="800">
-
 
